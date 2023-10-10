@@ -10,7 +10,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      Test Task
+      Test Task Start
     </div>
   );
 };
