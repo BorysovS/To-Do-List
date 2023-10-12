@@ -36,3 +36,27 @@ display: flex;
   gap: 12px;
   padding: 8px 16px;
 `
+
+export const BtnWrap = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+margin-left: auto;
+`
+
+export const SpanWrap = styled.span`
+color: #008000;
+`
+
+export const Span = styled.span`
+color: #1652d1;
+`
+
+export const Title = styled.p`
+padding: 0 2px;
+font-weight: bold;
+`
+
+export const TitleWrap = styled.div`
+width: 150px;
+`

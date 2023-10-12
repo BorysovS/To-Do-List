@@ -7,16 +7,17 @@ display: inline-flex;
   border: none;
   font: inherit;
   cursor: pointer;
-  background-color: #e2e5e8;
-  color: inherit;
+  background-color: ${props => (props.selected ? '#1976d2' : '#e2e5e8')}; /* Встановлення кольору залежно від selected */
+  color: ${props => (props.selected ? '#fff' : 'inherit')}; /* Встановлення кольору тексту залежно від selected */
 
   &:hover {
     background-color: #1976d2;
   color: #fff;
+  }
 
   &:active {
     background-color: #1565c0;
   color: #fff;
-  }
+
   }
 `

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteTask, updateTask } from "redux/taskSlice";
 
-import {BtnDel, BrnEdit, Container} from "./TaskItem.styled"
+import {BtnDel, BrnEdit, Container, BtnWrap, SpanWrap, Span, Title, TitleWrap} from "./TaskItem.styled"
 
 import { MdMode } from "react-icons/md";
 import { MdClose } from "react-icons/md";
@@ -28,14 +28,18 @@ export const TaskItem = ({task}) => {
 
     return (
         <Container>
-            <p>{title}</p>
-            <p>{message}</p>
+            <TitleWrap>
+            <Title>{title}</Title>
+            </TitleWrap>
             <div>
-            <p>{isCompleted ? <span>Complited <MdCheck size={18} color="green"/>"</span> : <span>Processed...</span>}</p>
+            <p>{message}</p>
+            </div>
+            <BtnWrap>
+            <p>{isCompleted ? <SpanWrap>Complited <MdCheck size={18} color="green"/></SpanWrap> : <Span>Processed...</Span>}</p>
             <BrnEdit type="button" onClick={() => setIsOpen(true)}><MdMode size={24}/></BrnEdit>
             {isOpen && < ModalWindow type={editType} data={task} onClose={() => setIsOpen(false)} saveData={editTask}/>}
             <BtnDel type="button" onClick={deleteItem}><MdClose size={24} color="red"/></BtnDel>
-            </div>
+            </BtnWrap>
         </Container>
     )
 };
